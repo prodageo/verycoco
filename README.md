@@ -10,3 +10,6 @@
 
 ### Windows prerequisite
 - Python installed (necessary for netlify-cli !)
+
+## Resources
+- https://docs.netlify.com/functions/create/?fn-language=ts : Netlify function (local run)
