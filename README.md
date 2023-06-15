@@ -7,6 +7,9 @@
   > √ Select a variant: » TypeScript
 
 > npm install netlify-cli -g
+> npm install @netlify/functions
+> cat esModuleInterop > tsconfig.json
+> cat  verbatimModuleSyntax >> tsconfig.json
 
 ### Windows prerequisite
 - Python installed (necessary for netlify-cli !)
