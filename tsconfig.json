@@ -17,7 +17,11 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    
+    /* Recommended by Netlify : https://docs.netlify.com/functions/create/?fn-language=ts#prepare-project */
+    "esModuleInterop": true,
+    "verbatimModuleSyntax": true
   },
   "include": ["src"]
 }
