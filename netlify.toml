@@ -2,3 +2,5 @@
   # Sets a custom directory for Netlify Functions
   # from : https://docs.netlify.com/configure-builds/file-based-configuration/#functions
   directory = "netlify/functions/"
+  # source : https://answers.netlify.com/t/how-to-correctly-import-axios-and-use-in-functions-vue-vite/81830/8
+  node_bundler = "esbuild"
