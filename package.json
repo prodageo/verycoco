@@ -1,0 +1,20 @@
+{
+  "name": "verycoco",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.5",
+    "vite": "^4.3.9"
+  },
+  "dependencies": {
+    "@netlify/functions": "^1.6.0",
+    "@types/node": "^14.18.51",
+    "netlify-cli": "^15.6.0"
+  }
+}

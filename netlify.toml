@@ -1,0 +1,4 @@
+[functions]
+  # Sets a custom directory for Netlify Functions
+  # from : https://docs.netlify.com/configure-builds/file-based-configuration/#functions
+  directory = "netlify/functions/"
