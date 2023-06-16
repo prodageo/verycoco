@@ -1,5 +1,6 @@
 import { Handler } from '@netlify/functions'
 // import axios from 'axios'
+// source : https://axios-http.com/docs/intro
 const axios = require('axios');
 
 export const handler: Handler = async (event, context) => {
@@ -33,7 +34,21 @@ export const handler: Handler = async (event, context) => {
   } 
   )*/
   
-  axios.get('https://webhook.site/b97b382c-d86d-4294-bb5e-3380fe8cc04d')
+  // https://answers.netlify.com/t/netlify-functions-axios-get-not-working-in-production/39171/4 : 
+  
+  let url = 'https://webhook.site/b97b382c-d86d-4294-bb5e-3380fe8cc04d' ;
+  
+  try {
+    const response = await axios.get(url);
+	console.log ( 'axios : RESPONSE' ) ;	
+    console.log(response);
+  } catch (error) {
+	console.log ( 'axios : ERROR' ) ;	  
+    console.error(error);
+  }
+  
+  /* local : OK / production : KO 
+  axios.get()
   .then(function (response) {
 	console.log ( 'axios : RESPONSE' ) ;	  
     console.log(response);
@@ -46,6 +61,8 @@ export const handler: Handler = async (event, context) => {
 	console.log ( 'axios : FINALLY' ) ;
   // always executed
   }); 
+  */
+  
   
   // end of axios request
 
