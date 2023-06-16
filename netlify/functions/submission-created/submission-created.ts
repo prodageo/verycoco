@@ -20,26 +20,35 @@ export const handler: Handler = async (event, context) => {
   // https://webhook.site/ : emulate an endpoint on a unique address (URL) that monitor all the calls
   //  click on edit to specify a return value (that will appear in axios response.data 
   
-  console.log ( 'axios return' ) ;
+  console.log ( 'axios : BEGIN' ) ;
   // axios.get('https://reqres.in/api/users?page=2', 
-  axios.get('https://webhook.site/b97b382c-d86d-4294-bb5e-3380fe8cc04d', 
-    /* {
+  
+  /*
+  axios.get('https://webhook.site/b97b382c-d86d-4294-bb5e-3380fe8cc04d',
+     {
 		params: {
 		  ID: 12345
     } 
-  } */
-  )
+  } 
+  )*/
+  
+  axios.get('https://webhook.site/b97b382c-d86d-4294-bb5e-3380fe8cc04d')
   .then(function (response) {
+	console.log ( 'axios : RESPONSE' ) ;	  
     console.log(response);
   })
   .catch(function (error) {
+	console.log ( 'axios : ERROR' ) ;
     console.log(error);
   })
   .finally(function () {
-    // always executed
+	console.log ( 'axios : FINALLY' ) ;
+  // always executed
   }); 
   
   // end of axios request
+
+  console.log ( 'axios : END' ) ;
   
   return {
     statusCode: 200,
