@@ -38,6 +38,7 @@ export const handler: Handler = async (event, context) => {
   
   let url = 'https://webhook.site/b97b382c-d86d-4294-bb5e-3380fe8cc04d' ;
   
+  /* local : OK / production : OK
   try {
     const response = await axios.get(url);
 	console.log ( 'axios : RESPONSE' ) ;	
@@ -46,6 +47,23 @@ export const handler: Handler = async (event, context) => {
 	console.log ( 'axios : ERROR' ) ;	  
     console.error(error);
   }
+  */
+
+  try {
+    const response = await axios.post(url, payload, 
+		{
+		  headers: {
+			'Content-Type': 'application/json'
+			}
+		}
+	);
+	console.log ( 'axios : RESPONSE' ) ;	
+    console.log(response);
+  } catch (error) {
+	console.log ( 'axios : ERROR' ) ;	  
+    console.error(error);
+  }
+
   
   /* local : OK / production : KO 
   axios.get()
