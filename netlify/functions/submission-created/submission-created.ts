@@ -16,9 +16,10 @@ export const handler: Handler = async (event, context) => {
   // Fake API request : https://reqres.in/api/users?page=2
   // use axios
   
-  // TO TESThttps
+  // TO TEST
   // https://webhook.site/ : emulate an endpoint on a unique address (URL) that monitor all the calls
   //  click on edit to specify a return value (that will appear in axios response.data 
+  // https://resttesttest.com/ : to test the emulation
   
   console.log ( 'axios : BEGIN' ) ;
   // axios.get('https://reqres.in/api/users?page=2', 
