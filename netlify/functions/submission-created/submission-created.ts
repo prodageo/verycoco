@@ -29,13 +29,21 @@ export const handler: Handler = async (event, context) => {
    - https://stackoverflow.com/questions/11801983/how-to-create-a-commit-and-push-into-repo-with-github-api-v3
 */
 
-	require('dotenv').config()
+	// require('dotenv').config()
 
 	const { GITHUB_TOKEN } = process.env; // Generate yours: https://github.com/settings/tokens/new (must have repo scope)
+/*
 	const { REPOSITORY_OWNER } = process.env;
 	const { REPOSITORY_NAME } = process.env;
 	const { BRANCH_NAME } = process.env;
 	const { PGP_SIG } = process.env;
+*/
+	const REPOSITORY_OWNER = process.env.REPOSITORY_OWNER ;
+	const REPOSITORY_NAME = process.env. REPOSITORY_NAME;
+	const BRANCH_NAME = process.env.BRANCH_NAME ;
+	const { PGP_SIG } = process.env;
+
+
 	console.log ( 'GH : TOKEN:' + GITHUB_TOKEN) ;
 	console.log ( 'GH : REPOSITORY_OWNER:' + REPOSITORY_OWNER) ;
 	console.log ( 'GH : REPOSITORY_NAME:' + REPOSITORY_NAME) ;
