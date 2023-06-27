@@ -1,0 +1,100 @@
+<html>
+<head>
+  <title>V0.0.4</title>
+</head>
+
+<body>
+<form name="session" method="POST" data-netlify="true">
+  <!-- to catch form type in the submission-created.ts -->
+  <input type="hidden" id="form_id" name="form_id" value="session">
+  <input type="hidden" id="date" name="date" value="CurrentTime"> 
+  <input type="hidden" id="timestamp" name="timestamp" value="CurrentDate">  
+  
+  <!-- actor_input, team_input are inputs typed by the user that can be sanitize later to be tranformed in a valid id -->
+  <H2>Sprint parameters</H2> 
+  <p>
+    <label>Your ID (pseudo, email, whatever that identifies you uniquely): <input type="text" name="actor_input" /></label>
+  </p>
+  <p>
+    <label>Your team: <input type="text" name="team_input" /></label>
+  </p>
+  <p>
+    <label>Your project: <input type="text" name="project_input" /></label>
+  </p>
+  <p>
+    <label>The new sprint: <input type="number" name="sprint_input" /></label>
+  </p>
+  
+  <H2>Retrospective's parameters</H2> 
+
+	  <input type="checkbox" id="alphas" name="alpha1" value="requirements">
+	  <label for="requirements">requirements</label><br>	  
+	  <input type="checkbox" id="alphas" name="alpha2" value="opportunity">
+	  <label for="opportunity">opportunity</label><br>
+	  <input type="checkbox" id="alphas" name="alpha3" value="work">
+	  <label for="opportunity">work</label><br>
+	  <input type="checkbox" id="alphas" name="alpha4" value="software_system">
+	  <label for="opportunity">software_system</label><br>
+	  <input type="checkbox" id="alphas" name="alpha5" value="team">
+	  <label for="team">team</label><br>
+
+  <p>
+    <label>Alphas: <select name="alphas1[]" multiple>
+      <option value="requirements">requirements</option>
+      <option value="opportunity">opportunity</option>
+    </select></label>
+  </p>
+	  
+  <p>
+    <label>Optionnal comment: <textarea name="message"></textarea></label>
+  </p>
+  <p>
+    <button type="submit">Send</button>
+  </p>
+</form>
+
+
+
+<!--
+<form name="retrospective" method="POST" data-netlify="true">
+  <p>
+    <label>Your Name: <input type="text" name="name" /></label>
+  </p>
+  <p>
+    <label>Your Email: <input type="email" name="email" /></label>
+  </p>
+  <p>
+    <label>Your Role: <select name="role[]" multiple>
+      <option value="leader">Leader</option>
+      <option value="follower">Follower</option>
+    </select></label>
+  </p>
+  <p>
+    <label>Message: <textarea name="message"></textarea></label>
+  </p>
+  <p>
+    <button type="submit">Send</button>
+  </p>
+</form>
+-->
+
+<script type="text/javascript">
+	<!-- source: https://stackoverflow.com/questions/39182400/current-date-and-current-time-in-hidden-fields -->
+    var d = new Date();
+
+    // Set the value of the "date" field
+    document.getElementById("date").value = d.toDateString();
+
+    // Set the value of the "time" field
+    var hours = d.getHours();
+    var mins = d.getMinutes();
+    var seconds = d.getSeconds();
+    // document.getElementById("time").value = hours + ":" + mins + ":" + seconds;
+	
+	// The Date.now() static method returns the number of milliseconds elapsed since the epoch, which is defined as the midnight at the beginning of January 1, 1970, UTC.	
+	document.getElementById("timestamp").value = Date.now();
+</script>  
+  
+
+</body>
+</html>
