@@ -10,9 +10,10 @@ export const handler: Handler = async (event, context) => {
 
   // to get the data typed in the form
   // source : https://www.raymondcamden.com/2019/01/15/customized-form-handling-on-netlify-with-serverless-functions
-  let payload = JSON.parse(event.body).payload;
+  let txt_payload = event.body ;
+  let json_payload = JSON.parse(txt_payload).payload;
 
-  console.log ( payload ) ;
+  console.log ( json_payload ) ;
   
 
 // TESTS WITH GITHUB
@@ -56,6 +57,7 @@ export const handler: Handler = async (event, context) => {
 	const MODES = { FILE: '100644', FOLDER: '040000' };
 	const TYPE = { BLOB: 'blob', TREE: 'tree' };
 
+	/*
 	const FILES_TO_COMMIT = [
 	// {
 	//	path: 'tests/sub/dir/file.md',
@@ -73,7 +75,8 @@ export const handler: Handler = async (event, context) => {
 	//   content: null, // Deletes the file (see how it's done below)
 	// },
 	];
-
+	*/
+	
 	// see https://docs.github.com/en/rest/git/blobs?apiVersion=2022-11-28
 	const CREATE_BLOB_URL = `https://api.github.com/repos/${REPOSITORY_OWNER}/${REPOSITORY_NAME}/git/blobs`;
 	console.log ( 'GH : CREATE_BLOB_URL:' + CREATE_BLOB_URL) ;
@@ -108,11 +111,18 @@ export const handler: Handler = async (event, context) => {
 	
 	// https://stackoverflow.com/questions/72836597/how-to-create-new-commit-with-the-github-graphql-api
 	
-	let file_content = 'stackabuse.com';
-	let buff = new Buffer.from(file_content);
-	let base64data = buff.toString('base64');
+	// let txt_payload = 'stackabuse.com';
+	let buff = new Buffer.from( txt_payload );
+	let base64_payload = buff.toString('base64');
 
-	console.log('"' + file_content + '" converted to Base64 is "' + base64data + '"');
+	// parse buffer to get the type of form
+	const actor_input = json_payload.data.actor_input ;
+	console.log('actor_input: ' + actor_input );
+	
+	const form_id = json_payload.data.form_id ;
+	console.log('form_id: ' + form_id );
+	
+	console.log('"' + txt_payload + '" converted to Base64 is "' + base64_payload + '"');
 
 	let GRAPHQL_URL = "https://api.github.com/graphql" ;
 	let REPO_NAME_OWNER = REPOSITORY_OWNER + "/" +  REPOSITORY_NAME ; // REPOSITORY_NAME + "/" + REPOSITORY_OWNER;
@@ -173,8 +183,21 @@ export const handler: Handler = async (event, context) => {
 	  let EXPECTED_HEAD_OID = graphQlResponse0.data.data.repository.refs.edges[0].node.target.history.edges[0].node.oid ; // 
 	  console.log ( 'GH : testVar:' + EXPECTED_HEAD_OID ) ;
 	  
-	  let dataFile = EXPECTED_HEAD_OID + ".json" ;
+	  let dataFilename = "_data/trash/" + EXPECTED_HEAD_OID + ".json" ;
+	  switch ( form_id ) {
+		case 'vote' :
+			dataFilename = "_data/votes/" + EXPECTED_HEAD_OID + ".json" ;
+			break ;
+		case 'session' :
+			dataFilename = "_data/sessions/" + EXPECTED_HEAD_OID + ".json" ;
+			break ;
+		default:
+			dataFilename = "_data/trash/" + EXPECTED_HEAD_OID + ".json" ;
+	  }
+	  console.log ( 'GH : dataFilename:' + dataFilename ) ;
+  
 	  let base64 = "c3RhY2thYnVzZS5jb20=" ;
+	  let commitMessage = "vote" ;
 	  
 	let gQuery1 = `mutation{
 			  createCommitOnBranch(
@@ -185,9 +208,9 @@ export const handler: Handler = async (event, context) => {
 					branchName: "${BRANCH_NAME}"
 				  },
 				  clientMutationId: "fbab",
-				  message: {headline: "headline!"},
+				  message: {headline: "${commitMessage}"},
 				  fileChanges: {
-					additions: {path: "${dataFile}", contents: "${base64}"}
+					additions: {path: "${dataFilename}", contents: "${base64_payload}"}
 				  }
 				  expectedHeadOid: "${EXPECTED_HEAD_OID}"
 				}
