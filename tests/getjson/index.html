@@ -1,0 +1,41 @@
+<html>
+
+<!-- verifier comportement d'un appel 
+	à Github Raw (https://raw.githubusercontent.com/prodageo/verycoll/main/apple.json)
+	depuis Github Pages (https://prodageo.github.io/verycoco/tests/getjson)
+
+apple.json	
+{
+    "fruit": "Apple",
+    "size": "Large",
+    "color": "Red"
+}
+	
+ecrire dans 3 champs :
+fruit : 
+size : 
+color : 
+-->
+
+
+<head>
+	<script type='module' src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> <!-- -->
+	<!-- <script type="module"> import redaxios from https://cdn.jsdelivr.net/npm/redaxios@0.5.1/+esm </script> -->
+    <script defer src="./getjson.js"></script>
+	<script defer src="./app.js"></script>
+</head>
+
+</body>
+<div class="fruits">
+	<p>
+		<label for="fruit" class="label">Fruit :</label>
+		<span class="fruit-value">empty</span>
+	</p>
+	<p>
+		<label for="size" class="label">Size :</label>
+		<span class="size-value">empty</span>
+	<p>
+</div>
+
+</body>
+</html>

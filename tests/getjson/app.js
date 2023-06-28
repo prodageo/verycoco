@@ -1,0 +1,1 @@
+const validator = new getJson();
