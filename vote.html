@@ -5,7 +5,7 @@
 <body>
 <form name="vote" method="POST" data-netlify="true">
   <!-- to catch form type in the submission-created.ts -->
-  <input type="hidden" id="form_id" name="form_id" value="retrospective">
+  <input type="hidden" id="form_id" name="form_id" value="vote">
   <!-- actor_input, team_input are inputs typed by the user that can be sanitize later to be tranformed in a valid id -->
   <H2>Vote parameters</H2> 
   <p>
@@ -23,24 +23,54 @@
   
   <H2>Your vote</H2>
   <p>
-    <label>Requirements:<br>
-	  <input type="radio" id="1" name="requirements" value="1">
+    <label>Requirements:<br><!-- 6 states -->
+	  <input type="radio" id="1" name="requirements_state" value="1">
 	  <label for="1">1</label>
-	  <input type="radio" id="2" name="requirements" value="2">
+	  <input type="radio" id="2" name="requirements_state" value="2">
 	  <label for="2">2</label>
-	  <input type="radio" id="3" name="requirements" value="3">
+	  <input type="radio" id="3" name="requirements_state" value="3">
 	  <label for="3">3</label>
+	  <input type="radio" id="4" name="requirements_state" value="4">
+	  <label for="4">4</label>
+	  <input type="radio" id="5" name="requirements_state" value="5">
+	  <label for="5">5</label>
+	  <input type="radio" id="6" name="requirements_state" value="6">
+	  <label for="6">6</label>
     </label>
   </p>
   <p>
-    <label>Opportunity:<br>
-	  <input type="radio" id="1" name="opportunity" value="1">
+    <label>Opportunity:<br><!-- 6 states -->
+	  <input type="radio" id="1" name="opportunity_state" value="1">
 	  <label for="1">1</label>
-	  <input type="radio" id="2" name="opportunity" value="2">
+	  <input type="radio" id="2" name="opportunity_state" value="2">
 	  <label for="2">2</label>
-	  <input type="radio" id="3" name="opportunity" value="3">
+	  <input type="radio" id="3" name="opportunity_state" value="3">
 	  <label for="3">3</label>
+	  <input type="radio" id="4" name="opportunity_state" value="4">
+	  <label for="4">4</label>
+	  <input type="radio" id="5" name="opportunity_state" value="5">
+	  <label for="5">5</label>
+	  <input type="radio" id="6" name="opportunity_state" value="6">
+	  <label for="6">6</label>
+	  
     </label>
+  </p>
+
+  <p>
+    <label>Team:<br><!-- 5 states -->
+	  <input type="radio" id="1" name="team_state" value="1">
+	  <label for="1">1</label>
+	  <input type="radio" id="2" name="team_state" value="2">
+	  <label for="2">2</label>
+	  <input type="radio" id="3" name="team_state" value="3">
+	  <label for="3">3</label>
+	  <input type="radio" id="4" name="team_state" value="4">
+	  <label for="4">4</label>
+	  <input type="radio" id="5" name="team_state" value="5">
+	  <label for="5">5</label>
+	  
+    </label>
+
   </p>
 
   <p>
