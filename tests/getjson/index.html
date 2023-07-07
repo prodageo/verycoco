@@ -1,45 +1,55 @@
+<!DOCTYPE html>
 <html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/ >
+		<title>Essence Progress Poker</title>
 
-<!-- verifier comportement d'un appel 
-	à Github Raw (https://raw.githubusercontent.com/prodageo/verycoll/main/apple.json)
-	depuis Github Pages (https://prodageo.github.io/verycoco/tests/getjson)
+		<!-- Google fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 
-	
-apple.json	
-{
-    "fruit": "Apple",
-    "size": "Large",
-    "color": "Red"
-}
-	
-ecrire dans 3 champs :
-fruit : 
-size : 
-color : 
--->
+		<!-- D3.js -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+		
+		<style>
+			body {
+				font-family: 'Open Sans', sans-serif;
+				font-size: 11px;
+				font-weight: 300;
+				fill: #242424;
+				text-align: center;
+				text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
+				cursor: default;
+			}
+			
+			.legend {
+				font-family: 'Raleway', sans-serif;
+				fill: #333333;
+			}
+			
+			.tooltip {
+				fill: #333333;
+			}
+		</style>
 
+		<script type='module' src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> <!-- -->
+		<!-- <script type="module"> import redaxios from https://cdn.jsdelivr.net/npm/redaxios@0.5.1/+esm </script> -->
+		<script defer src="./axis_report.js"></script>	
+		<script defer src="./session_report.js"></script>	
+		<script defer src="./front_end_env.js"></script>
+		<script defer src="./vote.js"></script>
+		<script defer src="./session.js"></script>	
+		<script defer src="./getjson.js"></script>
+		<script defer src="./radar_data.js"></script>		
+		<script defer src="./radar_dot.js"></script>				
+		<script defer src="./app.js"></script>
 
-<head>
-	<script type='module' src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> <!-- -->
-	<!-- <script type="module"> import redaxios from https://cdn.jsdelivr.net/npm/redaxios@0.5.1/+esm </script> -->
-    <script defer src="./front_end_env.js"></script>
-    <script defer src="./vote.js"></script>
-    <script defer src="./session.js"></script>	
-    <script defer src="./getjson.js"></script>
-	<script defer src="./app.js"></script>
-</head>
+		
+	</head>
+	<body>
 
-</body>
-<div class="fruits">
-	<p>
-		<label for="fruit" class="label">Fruit :</label>
-		<span class="fruit-value">empty</span>
-	</p>
-	<p>
-		<label for="size" class="label">Size :</label>
-		<span class="size-value">empty</span>
-	<p>
-</div>
+		<div class="radarChart"></div>
 
-</body>
+		<script src="radarChart.js"></script>	
+	</body>
 </html>
