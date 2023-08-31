@@ -6,10 +6,11 @@ Consists of two entry point :
 - desktop: to share the votes on a radar and start a discussion on state that differs from voters.
 
 ## Screen copies
-Vote screen on team member mobile
+
+### Vote screen on team member mobile
 ![](https://i.imgur.com/n3f9YRA.png)
 
-Radar screen on a shared screen
+### Radar screen on a shared screen
 - the screen can be a videoprojector for on-premise retro or share screen on desktop if remote.
 
 ![](https://i.imgur.com/TSajvLb.png)
