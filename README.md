@@ -11,7 +11,7 @@ Consists of two entry point :
 ![](https://i.imgur.com/n3f9YRA.png)
 
 ### Radar screen on a shared screen
-- the screen can be a videoprojector for on-premise retro or share screen on desktop if remote.
+- the screen can be a board (large screen, videoprojector) for on-premise retro or a shared screen on desktop if remote.
 
 ![](https://i.imgur.com/TSajvLb.png)
 
