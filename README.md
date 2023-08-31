@@ -1,18 +1,18 @@
+# Verycoco (codename)
 
-## Install dev station
-> npm init vite@latest
+A versatile application to collect votes in a sprint retrospective based on a [_chase the state_](https://openpracticelibrary.com/practice/chase-the-state/) format.
+Consists of two entry point :
+- mobile: to let team members votes on each alpha selected for this retro
+- desktop: to share the votes on a radar and start a discussion on state that differs from voters.
 
-  > √ Project name: verycoco
-  > √ Select a framework: » Vanilla
-  > √ Select a variant: » TypeScript
+## Screen copies
+Vote screen on team member mobile
+![](https://i.imgur.com/n3f9YRA.png)
 
-> npm install netlify-cli -g
-> npm install @netlify/functions
-> cat esModuleInterop > tsconfig.json
-> cat  verbatimModuleSyntax >> tsconfig.json
+Radar screen on a shared screen
+- the screen can be a videoprojector for on-premise retro or share screen on desktop if remote.
 
-### Windows prerequisite
-- Python installed (necessary for netlify-cli !)
+![](https://i.imgur.com/TSajvLb.png)
 
-## Resources
-- https://docs.netlify.com/functions/create/?fn-language=ts : Netlify function (local run)
+## Installation
+- expected mid of October 2023.
